@@ -11,48 +11,19 @@ import com.opensymphony.xwork2.ActionSupport;
 public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 
 	public Map<String,Object> session;
-	private String errorMessage;
 
 	public String execute() throws SQLException{
-		BuyItemCompleDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
-		buyItemCompleteDAO buyItemCompleteDAO
+		BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
+		buyItemCompleteDAO.buyItemInfo(
+			session.get("id").toString(),
+			session.get("login_user_id").toString(),
+			session.get("buyItem_price").toString(),
+			session.get("stock").toString(),
+			session.get("pay").toString());
+
 		String result = SUCCESS;
-
-		if(!(loginUserId.equals(""))
-				&& !(loginPassword.equals(""))
-				&& !(userName.equals(""))){
-				session.put("loginUserId", loginUserId);
-				session.put("loginPassword", loginPassword);
-				session.put("userName", userName);
-		}else{
-			setErrorMessage("未入力の項目があります。");
-			result = ERROR;
-		}
 		return result;
-	}
 
-	public String getLoginUserId(){
-		return loginUserId;
-	}
-
-	public void setLoginUserId(String loginUserId){
-		this.loginUserId = loginUserId;
-	}
-
-	public String getLoginPassword(){
-		return loginPassword;
-	}
-
-	public void setLoginPassword(String loginPassword){
-		this.loginPassword = loginPassword;
-	}
-
-	public String getUserName(){
-		return userName;
-	}
-
-	public void setUserName(String userName){
-		this.userName = userName;
 	}
 
 	public Map<String, Object> getSession(){
@@ -62,13 +33,5 @@ public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
 	@Override
 	public void setSession(Map<String, Object>session){
 		this.session = session;
-	}
-
-	public String getErrorMessage(){
-		return errorMessage;
-	}
-
-	public void setErrorMessage(String errorMessage){
-		this.errorMessage = errorMessage;
 	}
 }
