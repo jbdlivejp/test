@@ -7,7 +7,7 @@ use ecsite;
 
 drop table if exists login_user_transaction;
 
-create table login_user_transacton(
+create table login_user_transaction(
 	id int not null primary key auto_increment,
 	login_id varchar(16) unique,
 	login_pass varchar(16),
@@ -37,7 +37,7 @@ create table user_buy_item_transaction(
 	user_master_id varchar(16),
 	pay varchar(30),
 	insert_date datetime,
-	update_date datetime
+	delete_date datetime
 	);
 
 INSERT INTO item_info_transaction(item_name,item_price,item_stock) VALUES("ノートBook",100,50);

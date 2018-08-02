@@ -70,4 +70,8 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> loginSessionMap){
 		this.session = loginSessionMap;
 	}
+
+	public Map<String, Object> getSession(){
+		return session;
+	}
 }
