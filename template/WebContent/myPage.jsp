@@ -45,7 +45,7 @@
 
 	#main{
 	width:100%;
-	heiht:500px;
+	height:500px;
 	text-align:center;
 	}
 
@@ -94,11 +94,6 @@
 					<td>支払い方法</td>
 					<td>
 						<s:property value="session.total_payment"/>
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<s:submit value="登録"/>
 					</td>
 				</tr>
 			</table>

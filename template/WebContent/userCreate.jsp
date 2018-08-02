@@ -45,7 +45,7 @@
 
 	#main{
 	width:100%;
-	heiht:500px;
+	height:500px;
 	text-align:center;
 	}
 
@@ -93,7 +93,7 @@
 						<label>ユーザー名:</label>
 					</td>
 					<td>
-						<input type="text" name="useeName" value=""/>
+						<input type="text" name="userName" value=""/>
 					</td>
 				</tr>
 				<s:submit value="登録"/>
