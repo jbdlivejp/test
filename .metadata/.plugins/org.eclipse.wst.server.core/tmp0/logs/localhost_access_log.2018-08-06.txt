@@ -71,3 +71,8 @@
 0:0:0:0:0:0:0:1 - - [06/Aug/2018:16:46:42 +0900] "GET /template/HomeAction.action HTTP/1.1" 200 2050
 0:0:0:0:0:0:0:1 - - [06/Aug/2018:16:49:33 +0900] "GET /template/userCreateComplete.jsp HTTP/1.1" 200 1435
 0:0:0:0:0:0:0:1 - - [06/Aug/2018:16:53:03 +0900] "GET /ecsite/buyItem.jsp HTTP/1.1" 200 2646
+127.0.0.1 - - [06/Aug/2018:17:21:28 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [06/Aug/2018:17:21:31 +0900] "GET /template/buyItemConfirm.jsp HTTP/1.1" 200 2061
+0:0:0:0:0:0:0:1 - - [06/Aug/2018:17:22:02 +0900] "GET /ecsite/buyItemConfirm.jsp HTTP/1.1" 200 2186
+127.0.0.1 - - [06/Aug/2018:17:35:40 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [06/Aug/2018:17:35:43 +0900] "GET /ecsite/buyItemComplete.jsp HTTP/1.1" 200 1573
