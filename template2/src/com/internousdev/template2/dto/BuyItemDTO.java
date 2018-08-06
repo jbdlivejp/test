@@ -1,7 +1,6 @@
 package com.internousdev.template2.dto;
 
 public class BuyItemDTO {
-
 	private int id;
 	private String itemName;
 	private String itemPrice;
@@ -11,23 +10,23 @@ public class BuyItemDTO {
 	}
 
 	public void setItemName(String itemName){
-		 this.itemName= itemName;
+		this.itemName = itemName;
 	}
 
 	public String getItemPrice(){
-		 return itemPrice;
+		return itemPrice;
 	}
 
 	public void setItemPrice(String itemPrice){
-		 this.itemPrice= itemPrice;
+		this.itemPrice = itemPrice;
 	}
 
 	public int getId(){
-		 return id;
+		return id;
 	}
 
 	public void setId(int id){
-		 this.id = id;
+		this.id = id;
 	}
 
 }
