@@ -8812,3 +8812,6 @@ Caused by: org.xml.sax.SAXParseExceptionpublicId: platform:/resource/ecsite/WebC
 	at org.eclipse.jem.internal.util.emf.workbench.ProjectResourceSetImpl.demandLoad(ProjectResourceSetImpl.java:811)
 	at org.eclipse.emf.ecore.resource.impl.ResourceSetImpl.demandLoadHelper(ResourceSetImpl.java:274)
 	... 123 more
+
+!ENTRY org.eclipse.core.resources 4 380 2018-08-07 17:01:33.821
+!MESSAGE リソース・ツリーは修正中のため、ロックされています。
