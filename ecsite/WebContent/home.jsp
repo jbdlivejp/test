@@ -70,7 +70,7 @@
 		<div id="top">
 			<p>Home</p>
 		</div>
-		<div>
+		<div id="text-center">
 			<s:form action="HomeAction">
 				<s:submit value="商品購入"/>
 			</s:form>
