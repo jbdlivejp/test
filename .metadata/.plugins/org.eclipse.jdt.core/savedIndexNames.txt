@@ -112,7 +112,6 @@ INDEX VERSION 1.127+C:\Users\internousdev\Desktop\workspace\workspace-inokuchi\t
 2899113458.index
 3842635546.index
 3791280449.index
-3082098993.index
 2136845167.index
 1281871176.index
 4261835679.index

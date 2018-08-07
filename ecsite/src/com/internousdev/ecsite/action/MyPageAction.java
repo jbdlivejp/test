@@ -1,7 +1,7 @@
 package com.internousdev.ecsite.action;
 
 import java.sql.SQLException;
-mport java.util.ArrayList;
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,19 +15,19 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 	public Map<String, Object> session;
 	private MyPageDAO myPageDAO = new MyPageDAO();
-	private ArrayList<MyPageDTO>myPageList = new ArrayList<MyPageDTO>();
+	private ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 	private String deleteFlg;
-	private String result;
+	private String message;
 
 	public String execute() throws SQLException{
-		if(session.constansKey("id")){
+		if(!session.containsKey("id")){
 			return ERROR;
 		}
 
 		if(deleteFlg == null){
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
-			myPageList = myPageDAO.getmyPageUserInfo(item_transaction_id, user_master_id);
+			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
 
 		}else if(deleteFlg.equals("1")){
 			delete();
