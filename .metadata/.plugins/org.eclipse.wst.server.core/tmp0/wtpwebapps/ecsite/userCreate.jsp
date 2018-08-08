@@ -102,7 +102,7 @@
 
 			<div>
 				<span>前画面に戻る場合は</span>
-					<a href='<s:url action="HomeAction" />'>こちら</a></p>
+					<a href='<s:url action="HomeAction" />'>こちら</a>
 			</div>
 		</div>
 	</div>

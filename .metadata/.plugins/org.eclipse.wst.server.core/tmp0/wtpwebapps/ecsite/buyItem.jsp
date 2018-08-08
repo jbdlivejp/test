@@ -105,7 +105,7 @@
 						</td>
 						<td>
 							<input type="radio" name="pay" value="1" checked="checked">現金払い
-							<input type="radio" name="pay" value="2" checked="checked">クレジットカード
+							<input type="radio" name="pay" value="2">クレジットカード
 						</td>
 					</tr>
 					<tr>
@@ -119,7 +119,7 @@
 				<p>前画面に戻る場合は
 					<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 				<p>マイページは
-					<a href='=<s:url action="MyPageAction"/>'>こちら</a></p>
+					<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
 			</div>
 		</div>
 	</div>

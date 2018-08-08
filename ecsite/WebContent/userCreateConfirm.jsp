@@ -100,7 +100,6 @@
 					</tr>
 				</s:form>
 				</table>
-			</div>
 		</div>
 	</div>
 	<div id="footer">

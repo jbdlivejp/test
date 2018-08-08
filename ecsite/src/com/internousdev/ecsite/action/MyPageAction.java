@@ -46,8 +46,8 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 		if(res > 0){
 			myPageList = null;
-
 			setMessage(" 商品情報を正しく削除しました。");
+
 		}else if(res == 0){
 			setMessage("商品情報の削除に失敗しました。");
 		}
@@ -55,24 +55,33 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	}
 
 	public String getDeleteFlg(){
-		return deleteFlg;
+		return this.deleteFlg;
 	}
 
 	public void setDeleteFlg(String deleteFlg){
 		this.deleteFlg = deleteFlg;
 	}
 
-	@Override
-	public void setSession(Map<String, Object> loginSessionMap){
-		this.session = loginSessionMap;
+	public Map<String, Object> getSession(){
+		return this.session;
 	}
 
-	public Map<String, Object> getSession(){
-		return session;
+	@Override
+	public void setSession(Map<String, Object> Session){
+		this.session = Session;
+	}
+
+
+	public ArrayList<MyPageDTO> getMyPageList(){
+		return this.myPageList;
+	}
+
+	public void setMyPageList(ArrayList<MyPageDTO> myPageList) {
+		this.myPageList = myPageList;
 	}
 
 	public String getMessage(){
-		return message;
+		return this.message;
 	}
 
 	public void setMessage(String message){
