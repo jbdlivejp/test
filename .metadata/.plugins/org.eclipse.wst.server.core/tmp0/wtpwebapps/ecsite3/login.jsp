@@ -29,7 +29,6 @@
 	margin:0 auto;
 	}
 
-	/* ========ecsite LAYOUT======== */
 	#top{
 	width:780px;
 	margin:30px auto;
@@ -74,7 +73,7 @@
 			<h3>商品を購入する際にはログインをお願いします。</h3>
 			<s:form action="LoginAction">
 				<s:textfield name="loginUserId"/>
-				<s:password name="loginPasword"/>
+				<s:password name="loginPassword"/>
 				<s:submit value="ログイン"/>
 			</s:form>
 			<br>

@@ -29,7 +29,6 @@
 	margin:0 auto;
 	}
 
-	/* ========ecsite LAYOUT======== */
 	#top{
 	width:780px;
 	margin:30px auto;
