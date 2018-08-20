@@ -120,6 +120,8 @@
 					<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
 				<p>マイページは
 					<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
+				<p>管理者画面は
+					<a href='<s:url action="AdminAction"/>'>こちら</a></p>
 			</div>
 		</div>
 	</div>
