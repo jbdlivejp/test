@@ -85,6 +85,14 @@
 						<s:property value="itemPrice" escape="false" />
 						</td>
 					</tr>
+					<tr id="box">
+						<td>
+							<label>在庫:</label>
+						</td>
+						<td>
+						<s:property value="itemStock" escape="false" />
+						</td>
+					</tr>
 					<tr>
 						<td>
 							<s:submit value="完了"/>

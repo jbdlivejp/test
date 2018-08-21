@@ -87,6 +87,14 @@
 							<input type="text" name="itemPrice" value="" />
 						</td>
 					</tr>
+					<tr>
+						<td>
+							<label>在庫:</label>
+						</td>
+						<td>
+							<input type="text" name="itemStock" value="" />
+						</td>
+					</tr>
 					<s:submit value="登録"/>
 				</s:form>
 				</table>
