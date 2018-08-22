@@ -200,3 +200,7 @@
 0:0:0:0:0:0:0:1 - - [22/Aug/2018:16:46:07 +0900] "POST /ecsite3/LoginAction.action HTTP/1.1" 200 2753
 0:0:0:0:0:0:0:1 - - [22/Aug/2018:16:46:10 +0900] "GET /ecsite3/AdminAction.action HTTP/1.1" 200 2722
 0:0:0:0:0:0:0:1 - - [22/Aug/2018:16:46:29 +0900] "POST /ecsite3/LoginAction.action HTTP/1.1" 200 2753
+127.0.0.1 - - [22/Aug/2018:16:48:40 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [22/Aug/2018:16:48:42 +0900] "GET /ecsite3/ HTTP/1.1" 200 1667
+0:0:0:0:0:0:0:1 - - [22/Aug/2018:16:50:02 +0900] "POST /ecsite3/HomeAction.action HTTP/1.1" 200 2753
+0:0:0:0:0:0:0:1 - - [22/Aug/2018:16:50:04 +0900] "GET /ecsite3/AdminAction.action HTTP/1.1" 200 2722

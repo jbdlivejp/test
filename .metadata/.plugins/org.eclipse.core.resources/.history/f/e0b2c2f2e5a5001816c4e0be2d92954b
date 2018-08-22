@@ -27,7 +27,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword, adminFlg);
 		session.put("loginUser", loginDTO);
 
-		if(((LoginDTO)session.get("loginUser")).getAdminFlg("1")){
+		if(((LoginDTO)session.get("adminFlg")).getAdminFlg("1")){
 			result = SUCCESS;
 
 			return result;
