@@ -9,7 +9,7 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<title>Home画面</title>
+	<title>Error画面</title>
 
 	<style type="text/css">
 

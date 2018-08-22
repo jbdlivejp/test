@@ -14,15 +14,13 @@ public class ItemListDAO {
 		DBConnector dbConnector = new DBConnector();
 		Connection connection = dbConnector.getConnection();
 
-		public ArrayList<ItemListDTO>getItemInfo(String item_transaction_id, String user_master_id)throws SQLException{
+		public ArrayList<ItemListDTO>getItemInfo()throws SQLException{
 			ArrayList<ItemListDTO> itemListDTO = new ArrayList<ItemListDTO>();
 			String sql ="SELECT id, item_name, item_price, item_stock, insert_date FROM item_info_transaction";
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 
-			preparedStatement.setString(1,item_transaction_id);
-			preparedStatement.setString(2,user_master_id);
 
 			ResultSet resultSet = preparedStatement.executeQuery();
 
@@ -45,17 +43,15 @@ public class ItemListDAO {
 		return itemListDTO;
 	}
 
-	public int itemHistoryDelete(String item_transaction_id, String user_master_id)throws SQLException{
+	public int itemHistoryDelete()throws SQLException{
 
-		String sql ="DELETE FROM item_info_transaction WHERE item_transaction_id =? AND user_master_id = ?";
+		String sql ="DELETE FROM item_info_transaction";
 		PreparedStatement preparedStatement;
 		int result = 0;
 
 		try{
 			preparedStatement = connection.prepareStatement(sql);
 
-			preparedStatement.setString(1,item_transaction_id);
-			preparedStatement.setString(2,user_master_id);
 			result = preparedStatement.executeUpdate();
 
 		}catch(Exception e){

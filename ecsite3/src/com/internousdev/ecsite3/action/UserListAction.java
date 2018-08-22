@@ -24,9 +24,8 @@ public class UserListAction extends ActionSupport implements SessionAware{
 		}
 
 		if(deleteFlg == null){
-			String user_transaction_id = session.get("id").toString();
-			String user_master_id = session.get("login_user_id").toString();
-			userList = userListDAO.getUserInfo(user_transaction_id, user_master_id);
+
+			userList = userListDAO.getUserInfo();
 
 		}else if(deleteFlg.equals("1")){
 			delete();
@@ -38,10 +37,7 @@ public class UserListAction extends ActionSupport implements SessionAware{
 
 	public void delete() throws SQLException{
 
-		String user_transaction_id = session.get("id").toString();
-		String user_master_id = session.get("login_user_id").toString();
-
-		int res = userListDAO.userListHistoryDelete(user_transaction_id, user_master_id);
+		int res = userListDAO.userListHistoryDelete();
 
 		if(res > 0){
 			userList = null;
@@ -53,37 +49,45 @@ public class UserListAction extends ActionSupport implements SessionAware{
 
 	}
 
-	public String getDeleteFlg(){
-		return this.deleteFlg;
+	public Map<String, Object> getSession() {
+		return session;
 	}
 
-	public void setDeleteFlg(String deleteFlg){
-		this.deleteFlg = deleteFlg;
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 
-	public Map<String, Object> getSession(){
-		return this.session;
+	public UserListDAO getUserListDAO() {
+		return userListDAO;
 	}
 
-	@Override
-	public void setSession(Map<String, Object> Session){
-		this.session = Session;
+	public void setUserListDAO(UserListDAO userListDAO) {
+		this.userListDAO = userListDAO;
 	}
 
-
-	public ArrayList<UserListDTO> getUserList(){
-		return this.userList;
+	public ArrayList<UserListDTO> getUserList() {
+		return userList;
 	}
 
 	public void setUserList(ArrayList<UserListDTO> userList) {
 		this.userList = userList;
 	}
 
-	public String getMessage(){
-		return this.message;
+	public String getDeleteFlg() {
+		return deleteFlg;
 	}
 
-	public void setMessage(String message){
+	public void setDeleteFlg(String deleteFlg) {
+		this.deleteFlg = deleteFlg;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
 		this.message = message;
 	}
+
+
 }

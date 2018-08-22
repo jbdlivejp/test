@@ -10,7 +10,7 @@
 	<meta http-equiv="imagetoolbar" content="no"/>
 	<meta name="description" content=""/>
 	<meta name="keywords" content=""/>
-	<title>MyPage画面</title>
+	<title>ItemList画面</title>
 
 	<style type="text/css">
 
@@ -28,6 +28,7 @@
 	table{
 	text-align:center;
 	margin:0 auto;
+
 	}
 
 	#top{
@@ -82,14 +83,15 @@
 				<th>値段</th>
 				<th>在庫</th>
 				<th>登録日</th>
+				<th>詳細</th>
 			</tr>
-
 			<s:iterator value="itemList">
 				<tr>
 					<td><s:property value="itemName"/></td>
 					<td><s:property value="itemPrice"/><span>円</span></td>
 					<td><s:property value="itemStock"/><span>個</span></td>
 					<td><s:property value="insert_date"/></td>
+					<td><a href="itemDetail.jsp">詳細</a></td>
 				</tr>
 			</s:iterator>
 			</table>
