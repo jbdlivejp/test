@@ -2,4 +2,5 @@
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="com.internousdev.template2.dao.UserCreateCompleteDAO"/>
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.Action"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite3.dto.ItemDetailDTO"/>
 </qualifiedTypeNameHistroy>

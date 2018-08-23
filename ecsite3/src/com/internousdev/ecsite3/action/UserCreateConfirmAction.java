@@ -23,6 +23,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 				session.put("loginUserId", loginUserId);
 				session.put("loginPassword", loginPassword);
 				session.put("userName", userName);
+
 		}else{
 			setErrorMessage("未入力の項目があります。");
 			result = ERROR;
