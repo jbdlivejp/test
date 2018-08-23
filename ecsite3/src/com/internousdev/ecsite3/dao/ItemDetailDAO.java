@@ -3,6 +3,7 @@ package com.internousdev.ecsite3.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
 import com.internousdev.ecsite3.dto.ItemDetailDTO;
 import com.internousdev.ecsite3.util.DBConnector;
@@ -13,7 +14,7 @@ public class ItemDetailDAO {
 		private Connection connection = dbConnector.getConnection();
 		private ItemDetailDTO itemDetailDTO = new ItemDetailDTO();
 
-		public ItemDetailDTO getItemDetailInfo(){
+		public List<ItemDetailDTO> getItemDetailList(){
 
 		String sql = "SELECT id, item_name, item_price ,item_stock ,insert_date FROM item_info_transaction";
 
@@ -32,7 +33,7 @@ public class ItemDetailDAO {
 			e.printStackTrace();
 		}
 
-		return itemDetailDTO;
+		return itemDetailDTOList;
 	}
 	public ItemDetailDTO getItemDetailDTO(){
 		return itemDetailDTO;

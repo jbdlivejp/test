@@ -77,28 +77,32 @@
 		<s:elseif test="message == null">
 			<h3>商品情報は以下になります。</h3>
 			<table border="1">
-			<tr>
-				<th>商品名</th>
-				<th>値段</th>
-				<th>在庫</th>
-				<th>登録日</th>
-			</tr>
 
-			<s:iterator value="itemDetail">
 				<tr>
-					<td><s:property value="itemName"/></td>
-					<td><s:property value="itemPrice"/><span>円</span></td>
-					<td><s:property value="itemStock"/><span>個</span></td>
-					<td><s:property value="insert_date"/></td>
-
+				<th scope="row"><s:label value="商品名"/></th>
+				<td><s:property value="%{#session.productName}"/></td>
 				</tr>
-			</s:iterator>
+
+				<tr>
+				<th scope="row"><s:label value="値段"/></th>
+				<td><s:property value="%{#session.price}"/>円</td>
+				</tr>
+
+				<tr>
+				<th scope="row"><s:label value="在庫数"/></th>
+				<td><s:select name="productCount" list="%{#session.productCountList}"/>個</td>
+				</tr>
+
+				<tr>
+				<th scope="row"><s:label value="登録日"/></th>
+				<td><s:property value="%{#session.releaseDate}"/></td>
+				</tr>
+
+
 			</table>
-			<s:form action="ItemDetailAction">
-				<input type="hidden" name="deleteFlg" value="1">
 				<s:submit value="更新" method="reload"/>
 				<s:submit value="削除" method="delete"/>
-			</s:form>
+
 		</s:elseif>
 		<s:if test="message != null">
 			<h3><s:property value ="message"/></h3>
