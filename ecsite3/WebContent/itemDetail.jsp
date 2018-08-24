@@ -80,22 +80,27 @@
 
 				<tr>
 				<th scope="row"><s:label value="商品名"/></th>
-				<td><s:property value="%{#session.productName}"/></td>
+				<td><s:property value="%{#session.itemName}"/></td>
 				</tr>
 
 				<tr>
 				<th scope="row"><s:label value="値段"/></th>
-				<td><s:property value="%{#session.price}"/>円</td>
+				<td><s:property value="%{#session.itemPrice}"/>円</td>
 				</tr>
 
 				<tr>
 				<th scope="row"><s:label value="在庫数"/></th>
-				<td><s:select name="productCount" list="%{#session.productCountList}"/>個</td>
+				<td><s:property value="%{#session.itemStock}"/>個</td>
 				</tr>
 
 				<tr>
 				<th scope="row"><s:label value="登録日"/></th>
-				<td><s:property value="%{#session.releaseDate}"/></td>
+				<td><s:property value="%{#session.insert_date}"/></td>
+				</tr>
+
+				<tr>
+				<th scope="row"><s:label value="更新日"/></th>
+				<td><s:property value="%{#session.update_date}"/></td>
 				</tr>
 
 

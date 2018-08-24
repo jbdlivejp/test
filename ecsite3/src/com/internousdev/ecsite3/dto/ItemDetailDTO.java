@@ -2,6 +2,8 @@ package com.internousdev.ecsite3.dto;
 
 public class ItemDetailDTO {
 
+	private int itemId;
+
 	private String id;
 
 	private String itemName;
@@ -11,6 +13,17 @@ public class ItemDetailDTO {
 	private String itemStock;
 
 	private String insert_date;
+
+	private String update_date;
+
+
+	public int getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
 
 	public String getId() {
 		return id;
@@ -51,6 +64,15 @@ public class ItemDetailDTO {
 	public void setInsert_date(String insert_date) {
 		this.insert_date = insert_date;
 	}
+
+	public String getUpdate_date() {
+		return update_date;
+	}
+
+	public void setUpdate_date(String update_date) {
+		this.update_date = update_date;
+	}
+
 
 
 }

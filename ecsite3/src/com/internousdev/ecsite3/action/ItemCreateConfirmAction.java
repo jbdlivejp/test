@@ -8,6 +8,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemCreateConfirmAction extends ActionSupport implements SessionAware{
 
+	private String itemId;
 	private String itemName;
 	private String itemPrice;
 	private String itemStock;
@@ -17,12 +18,16 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 	public String execute(){
 		String result = SUCCESS;
 
-		if(!(itemName.equals(""))
+		if(!(itemId.equals(""))
+			&& !(itemName.equals(""))
 			&& !(itemPrice.equals(""))
 			&& !(itemStock.equals(""))){
+				session.put("itemId", itemId);
 				session.put("itemName", itemName);
 				session.put("itemPrice", itemPrice);
 				session.put("itemStock", itemStock);
+
+
 
 		}else{
 			setErrorMessage("未入力の項目があります。");
@@ -31,29 +36,55 @@ public class ItemCreateConfirmAction extends ActionSupport implements SessionAwa
 		return result;
 	}
 
-	public String getItemName(){
+
+
+	public String getItemId() {
+		return itemId;
+	}
+
+
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
+	}
+
+
+
+	public String getItemName() {
 		return itemName;
 	}
 
-	public void setItemName(String itemName){
+
+
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
-	public String getItemPrice(){
+
+
+	public String getItemPrice() {
 		return itemPrice;
 	}
 
-	public void setItemPrice(String itemPrice){
+
+
+	public void setItemPrice(String itemPrice) {
 		this.itemPrice = itemPrice;
 	}
 
-	public String getItemStock(){
+
+
+	public String getItemStock() {
 		return itemStock;
 	}
 
-	public void setItemStock(String itemStock){
+
+
+	public void setItemStock(String itemStock) {
 		this.itemStock = itemStock;
 	}
+
+
 
 	public Map<String, Object> getSession(){
 		return session;

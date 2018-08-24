@@ -11,6 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemCreateCompleteAction extends ActionSupport implements SessionAware{
 
+	private int itemId;
 	private String itemName;
 	private int itemPrice;
 	private int itemStock;
@@ -19,38 +20,74 @@ public class ItemCreateCompleteAction extends ActionSupport implements SessionAw
 
 	public String execute() throws SQLException{
 
-		itemCreateCompleteDAO.createItem(session.get("itemName").toString(),
-		session.get("itemPrice").toString(),
-		session.get("itemStock").toString());
+		itemCreateCompleteDAO.createItem(session.get("itemId").toString(),
+			session.get("itemName").toString(),
+			session.get("itemStock").toString(),
+			session.get("itemPrice").toString());
+
 
 		String result = SUCCESS;
 
 		return result;
 	}
 
-	public String getLoginUserId(){
+
+
+
+	public int getItemId() {
+		return itemId;
+	}
+
+
+
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
+
+
+
+	public String getItemName() {
 		return itemName;
 	}
 
-	public void setItemName(String itemName){
+
+
+
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
 
-	public int getItemPrice(){
+
+
+
+	public int getItemPrice() {
 		return itemPrice;
 	}
 
-	public void setItemPrice(int itemPrice){
+
+
+
+	public void setItemPrice(int itemPrice) {
 		this.itemPrice = itemPrice;
 	}
 
-	public int getItemStock(){
+
+
+
+	public int getItemStock() {
 		return itemStock;
 	}
 
-	public void setItemStock(int itemStock){
+
+
+
+	public void setItemStock(int itemStock) {
 		this.itemStock = itemStock;
 	}
+
+
 
 
 	public Map<String, Object> getSession(){

@@ -71,6 +71,15 @@
 			</s:if>
 			<table>
 			<s:form action="ItemCreateConfirmAction">
+
+					<tr>
+						<td>
+							<label>商品ID:</label>
+						</td>
+						<td>
+							<input type="text" name="itemId" value="" />
+						</td>
+					</tr>
 					<tr>
 						<td>
 							<label>商品名:</label>
@@ -95,6 +104,7 @@
 							<input type="text" name="itemStock" value="" />
 						</td>
 					</tr>
+
 					<s:submit value="登録"/>
 				</s:form>
 				</table>

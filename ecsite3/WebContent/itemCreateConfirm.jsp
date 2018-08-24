@@ -69,6 +69,15 @@
 			<h3>登録する内容は以下でよろしいですか。</h3>
 			<table>
 			<s:form action="ItemCreateCompleteAction">
+
+					<tr id="box">
+						<td>
+							<label>商品ID:</label>
+						</td>
+						<td>
+						<s:property value="itemId" escape="false" />
+						</td>
+					</tr>
 					<tr id ="box">
 						<td>
 							<label>商品名:</label>
@@ -93,6 +102,7 @@
 						<s:property value="itemStock" escape="false" />
 						</td>
 					</tr>
+
 					<tr>
 						<td>
 							<s:submit value="完了"/>

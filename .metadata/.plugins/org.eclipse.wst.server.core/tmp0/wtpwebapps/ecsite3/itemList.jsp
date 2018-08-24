@@ -91,7 +91,9 @@
 					<td><s:property value="itemPrice"/><span>円</span></td>
 					<td><s:property value="itemStock"/><span>個</span></td>
 					<td><s:property value="insert_date"/></td>
-					<td><a href="itemDetail.jsp">詳細</a></td>
+					<td><a href='<s:url action="ItemDetailAction">
+						<s:param name="itemId" value="%{itemId}"/>
+						</s:url>'>詳細</a></td>
 				</tr>
 			</s:iterator>
 			</table>
@@ -105,6 +107,8 @@
 		</s:if>
 		<div id="text-right">
 
+
+			<p>前画面に戻る場合は<a href='<s:url action="AdminAction" />'>こちら</a></p>
 			<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 			<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</div>
