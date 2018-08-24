@@ -108,7 +108,7 @@
 		<div id="text-right">
 
 
-			<p>前画面に戻る場合は<a href='<s:url action="AdminAction" />'>こちら</a></p>
+			<p>管理者画面に戻る場合は<a href='<s:url action="AdminAction" />'>こちら</a></p>
 			<p>Homeへ戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a></p>
 			<p>ログアウトする場合は<a href='<s:url action="LogoutAction"/>'>こちら</a></p>
 			</div>

@@ -67,6 +67,7 @@
 		<div>
 			<h3>商品の登録が完了致しました。</h3>
 			<div>
+				<p>前画面に戻る場合は<a href='<s:url action="AdminAction" />'>こちら</a></p>
 				<a href='<s:url action="HomeAction" />'>ログインへ</a>
 			</div>
 		</div>

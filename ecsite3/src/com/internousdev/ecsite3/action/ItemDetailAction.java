@@ -26,6 +26,7 @@ public class ItemDetailAction extends ActionSupport implements SessionAware{
 		System.out.println(itemId);
 
 		session.put("id",itemDetailDTO.getId());
+		session.put("item_id",itemDetailDTO.getItemId());
 		session.put("item_name",itemDetailDTO.getItemName());
 		session.put("item_price",itemDetailDTO.getItemPrice());
 		session.put("item_stock",itemDetailDTO.getItemStock());

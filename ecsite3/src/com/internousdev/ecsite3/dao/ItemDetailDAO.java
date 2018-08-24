@@ -32,7 +32,7 @@ public class ItemDetailDAO {
 				itemDetailDTO.setItemPrice(resultSet.getString("item_price"));
 				itemDetailDTO.setItemStock(resultSet.getString("item_stock"));
 				itemDetailDTO.setInsert_date(resultSet.getString("insert_date"));
-				itemDetailDTO.setInsert_date(resultSet.getString("update_date"));
+				itemDetailDTO.setUpdate_date(resultSet.getString("update_date"));
 				itemDetailDTOList.add(itemDetailDTO);
 			}
 		}catch(Exception e){
@@ -57,7 +57,9 @@ public class ItemDetailDAO {
 
 		try{
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
 			preparedStatement.setInt(1, itemId);
+
 			ResultSet resultSet = preparedStatement.executeQuery();
 
 			if(resultSet.next()){
@@ -68,7 +70,7 @@ public class ItemDetailDAO {
 				itemDetailDTO.setItemPrice(resultSet.getString("item_price"));
 				itemDetailDTO.setItemStock(resultSet.getString("item_stock"));
 				itemDetailDTO.setInsert_date(resultSet.getString("insert_date"));
-				itemDetailDTO.setInsert_date(resultSet.getString("update_date"));
+				itemDetailDTO.setUpdate_date(resultSet.getString("update_date"));
 			}
 		}catch(Exception e){
 			e.printStackTrace();
