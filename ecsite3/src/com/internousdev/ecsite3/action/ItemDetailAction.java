@@ -11,7 +11,7 @@ import com.opensymphony.xwork2.ActionSupport;
 public class ItemDetailAction extends ActionSupport implements SessionAware{
 
 	private int itemId;
-	/*private List<ItemDetailDTO> itemDetailDTOList = new ArrayList<ItemDetailDTO>();*/
+
 
 	private Map<String, Object> session;
 
@@ -49,12 +49,7 @@ public class ItemDetailAction extends ActionSupport implements SessionAware{
 	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-	/*public List<ItemDetailDTO> getItemDetailDTOList() {
-		return itemDetailDTOList;
-	}
-	public void setItemDetailDTOList(List<ItemDetailDTO> itemDetailDTOList) {
-		this.itemDetailDTOList = itemDetailDTOList;
-	}*/
+
 	public Map<String, Object> getSession() {
 		return session;
 	}

@@ -71,44 +71,49 @@
 			<p>ItemDetail</p>
 		</div>
 		<div>
-		<s:if test ="itemDetail == null">
+<%-- 		<s:if test ="itemDetail == null">
 			<h3>商品情報はありません。</h3>
 		</s:if>
-		<s:elseif test="message == null">
+		<s:elseif test="message == null"> --%>
 			<h3>商品情報は以下になります。</h3>
 			<table border="1">
 
 				<tr>
-				<th scope="row"><s:label value="商品名"/></th>
-				<td><s:property value="%{#session.itemName}"/></td>
+				<th scope="row">商品名</th>
+				<td><s:property value="%{#session.item_name}"/></td>
 				</tr>
 
 				<tr>
-				<th scope="row"><s:label value="値段"/></th>
-				<td><s:property value="%{#session.itemPrice}"/>円</td>
+				<th scope="row">値段</th>
+				<td><s:property value="%{#session.item_price}"/>円</td>
 				</tr>
 
 				<tr>
-				<th scope="row"><s:label value="在庫数"/></th>
-				<td><s:property value="%{#session.itemStock}"/>個</td>
+				<th scope="row">在庫数</th>
+				<td><s:property value="%{#session.item_stock}"/>個</td>
 				</tr>
 
 				<tr>
-				<th scope="row"><s:label value="登録日"/></th>
+				<th scope="row">登録日</th>
 				<td><s:property value="%{#session.insert_date}"/></td>
 				</tr>
 
 				<tr>
-				<th scope="row"><s:label value="更新日"/></th>
+				<th scope="row">更新日</th>
 				<td><s:property value="%{#session.update_date}"/></td>
 				</tr>
 
 
 			</table>
+
+				<%-- <s:form action="ItemDetailAction">
+				<input type="hidden" name="deleteFlg" value="1">
+				<s:submit value="一括削除" method="delete"/>
 				<s:submit value="更新" method="reload"/>
 				<s:submit value="削除" method="delete"/>
+				</s:form> --%>
 
-		</s:elseif>
+		<%-- </s:elseif> --%>
 		<s:if test="message != null">
 			<h3><s:property value ="message"/></h3>
 		</s:if>

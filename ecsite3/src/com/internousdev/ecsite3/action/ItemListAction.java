@@ -26,6 +26,11 @@ public class ItemListAction extends ActionSupport implements SessionAware{
 		if(deleteFlg == null){
 
 			itemList = itemListDAO.getItemInfo();
+			session.put("itemList", itemList);
+
+			for(int i=0; i < itemList.size(); i++){
+				System.out.println(session.get("itemList"));
+			}
 
 		}else if(deleteFlg.equals("1")){
 			delete();

@@ -4,4 +4,5 @@
 <fullyQualifiedTypeName name="com.opensymphony.xwork2.Action"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite3.dto.ItemDetailDTO"/>
 <fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>
