@@ -17,5 +17,40 @@ public class HomeAction extends ActionSupport implements SessionAware{
 	public String execute(){
 
 		if(!(session.containsKey("loginId"))&& !(session.containsKey("tempUserId")))
+			CommonUtility commonUtility = new CommonUtility();
+			session.put("tempUserId", commonUtility.getRandomValue());
+		}
+
+		if(!session.containsKey("loginId")){
+			session.put("logined", 0);
+		}
+
+		if(!session.containsKey(mCategoryList)){
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList =mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList", mCategoryDtoList);
+		}
+		return SUCCESS;
+	}
+
+	public String getCategoryId() {
+		return categoryId;
+	}
+
+	public void setCategoryId(String categoryId) {
+		this.categoryId = categoryId;
+	}
+
+	public List<MCategoryDTO> getmCategoryDtoList() {
+		return mCategoryDtoList;
+	}
+	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
+		this.mCategoryDtoList = mCategoryDtoList;
+	}
+	public Map<String, Object> getSession() {
+		return session;
+	}
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
 	}
 }
