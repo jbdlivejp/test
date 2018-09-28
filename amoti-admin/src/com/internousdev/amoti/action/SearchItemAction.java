@@ -17,7 +17,7 @@ import com.internousdev.amoti.util.Pagination;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class SearchItemAction extends ActionSupport implements SessionAware{
-	private String categoryId;
+	private int categoryId;
 	private String keywords;
 	private String pageNo;
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
@@ -31,12 +31,12 @@ public class SearchItemAction extends ActionSupport implements SessionAware{
 		if(keywords==null) {
 			keywords="";
 		}
-		keywordsErrorMessageList = inputChecker.doCheck("検索ワード", keywords, 0, 16, true, true, true, true, false,true,true);
+		keywordsErrorMessageList = inputChecker.doCheck("検索ワード", keywords, 0, 16, true, true, true, true, false, true, true, false, false);
 
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 
 		switch (categoryId) {
-			case "1":
+			case 1:
 				productInfoDtoList = productInfoDAO.getProductInfoListAll(keywords.replaceAll("　", " ").split(" "));
 				result = SUCCESS;
 				break;
@@ -66,7 +66,6 @@ public class SearchItemAction extends ActionSupport implements SessionAware{
 		}else {
 			paginationDTO = pagination.getPage(productInfoDtoList, 9, (pageNo));
 		}
-
 		session.put("productInfoDtoList", paginationDTO.getCurrentProductInfoPage());
 		session.put("totalPageSize", paginationDTO.getTotalPageSize());
 		session.put("currentPageNo", paginationDTO.getCurrentPageNo());
@@ -101,10 +100,10 @@ public class SearchItemAction extends ActionSupport implements SessionAware{
 		this.mCategoryDtoList = mCategoryDtoList;
 	}
 
-	public String getCategoryId() {
+	public int getCategoryId() {
 		return categoryId;
 	}
-	public void setCategoryId(String categoryId) {
+	public void setCategoryId(int categoryId) {
 		this.categoryId = categoryId;
 	}
 	public String getKeywords() {

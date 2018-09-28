@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/purchaseHistory.css">
 <title>商品購入履歴</title>
 </head>
 <body>
@@ -25,7 +25,7 @@
 			<th><s:label value="発売会社名"/></th>
 			<th><s:label value="発売年月日"/></th>
 		</tr>
-
+	</thead>
 		<tbody>
 		<s:iterator value="#session.purchaseHistoryInfoDtoList">
 

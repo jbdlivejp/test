@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/cart.css">
 <title>カート</title>
 
 <script type="text/javascript">
@@ -88,7 +88,7 @@
 </s:if>
 <s:else>
 <div class="info">
-カート情報はありません。
+<p>カート情報はありません。<p>
 </div>
 </s:else>
 </div>

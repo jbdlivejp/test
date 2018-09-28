@@ -35,6 +35,8 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	private Map<String, Object> session;
 	public String execute() {
 		String result = ERROR;
+		session.remove("loginIdErrorMessageList");
+		session.remove("passwordErrorMessageList");
 
 		session.remove("familyName");
 		session.remove("firstName");
@@ -98,10 +100,10 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 		session.put("purchaseHistoryInfoDtoList", purchaseHistoryInfoDtoList);
 		}
 
-		if(!session.containsKey("loginId")) {
-			result = ERROR;
-		}else {
+		if(session.containsKey("loginId")) {
 			result = SUCCESS;
+		}else if(session.containsKey("tempUserId")){
+			session.put("settlementFlg", "1");
 		}
 		return result;
 	}
@@ -208,5 +210,4 @@ public class SettlementConfirmAction extends ActionSupport implements SessionAwa
 	public void setSubtotal(String subtotal) {
 		this.subtotal = subtotal;
 	}
-
 }

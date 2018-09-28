@@ -33,6 +33,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 		loginIdErrorMessageList = null;
 		passwordErrorMessageList = null;
+		session.remove("loginIdErrorMessageList");
+		session.remove("passwordErrorMessageList");
 
 		if(savedLoginIdFlg == true){
 			session.put("savedLoginIdFlg", true);
@@ -41,10 +43,11 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("savedLoginIdFlg", false);
 			session.remove("savedLoginId");
 		}
+
 //IDとパスワードの文字数、文字種制限をします//
 		InputChecker inputChecker = new InputChecker();
-		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false);
-		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false);
+		loginIdErrorMessageList = inputChecker.doCheck("ログインID", loginId, 1, 8, true, false, false, true, false, false, false, false, false);
+		passwordErrorMessageList = inputChecker.doCheck("パスワード", password, 1, 16, true, false, false, true, false, false, false, false, false);
 //IDが空ならログインせずにエラーメッセージを返します//
 		if(!(loginIdErrorMessageList.isEmpty())){
 			session.put("loginIdErrorMessageList", loginIdErrorMessageList);
@@ -84,15 +87,23 @@ public class LoginAction extends ActionSupport implements SessionAware{
 					}catch(SQLException e){
 						e.printStackTrace();
 					}
-					result = "settlement";
+					if(session.get("settlementFlg") == "1"){
+						result = "settlement";
+						session.remove("settlementFlg");
+					}else{
+						result = SUCCESS;
+					}
 				}else{
 					result = SUCCESS;
 				}
 			}
+			session.remove("tempUserId");
 			session.put("logined", 1);
-		}else if(userInfoDAO.isExistsUserInfo(loginId)){
+		}else if(userInfoDAO.isExistsUserInfo(loginId) && !(session.containsKey("passwordErrorMessageList"))){
 			session.put("passwordErrorMessageList", "入力されたパスワードが異なります。");
 			session.put("logined", 0);
+		}else if(!(userInfoDAO.isExistsUserInfo(loginId)) && !(session.containsKey("loginIdErrorMessageList"))){
+			session.put("loginIdErrorMessageList", "そのログインIDは存在しません。");
 		}
 		return result;
 	}

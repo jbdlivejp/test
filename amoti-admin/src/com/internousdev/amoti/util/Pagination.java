@@ -21,7 +21,7 @@ public class Pagination {
 		paginationDTO.setEndRecordNo(paginationDTO.getStartRecordNo() + pageSize - 1);
 
 		List<Integer> pageNumberList = new ArrayList<Integer>();
-		for(int pageNumber = 1;pageNumber <= paginationDTO.getTotalPageSize(); pageNumber++) {
+		for(int pageNumber = 1; pageNumber <= paginationDTO.getTotalPageSize(); pageNumber++) {
 			pageNumberList.add(pageNumber);
 		}
 
@@ -29,7 +29,6 @@ public class Pagination {
 
 		List<ProductInfoDTO> currentProductInfoPage = new ArrayList<ProductInfoDTO>();
 		int startI = paginationDTO.getStartRecordNo() - 1;
-		// int endI = paginationDTO.getEndRecordNo();
 		int endI2 = Math.min(paginationDTO.getEndRecordNo(), paginationDTO.getTotalRecordSize());
 		for (int i = startI; i < endI2; i++) {
 			ProductInfoDTO productInfoDto = list.get(i);
@@ -69,7 +68,7 @@ public class Pagination {
 		paginationDTO.setEndRecordNo(paginationDTO.getStartRecordNo() + (pageSize - 1));
 
 		List<Integer> pageNumberList = new ArrayList<Integer>();
-		for(int pageNumber = 1;pageNumber <= paginationDTO.getTotalPageSize(); pageNumber++) {
+		for(int pageNumber = 1; pageNumber <= paginationDTO.getTotalPageSize(); pageNumber++) {
 			pageNumberList.add(pageNumber);
 		}
 
@@ -77,7 +76,6 @@ public class Pagination {
 
 		List<ProductInfoDTO> currentProductInfoPage = new ArrayList<ProductInfoDTO>();
 		int startI = paginationDTO.getStartRecordNo() - 1;
-		// int endI = paginationDTO.getEndRecordNo();
 		int endI2 = Math.min(paginationDTO.getEndRecordNo(), paginationDTO.getTotalRecordSize());
 		for (int i = startI; i < endI2; i++) {
 			ProductInfoDTO productInfoDto = list.get(i);

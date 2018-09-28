@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/mypage.css">
 <title>マイページ</title>
 </head>
 <body>
@@ -13,6 +13,7 @@
 <div id="contents">
 <h1>マイページ画面</h1>
 	<s:form action="PurchaseHistoryAction">
+		<div class="box">
 	<table class="vertical-list-table">
 		<tr>
 			<th scope="row"><s:label value="姓"/></th>
@@ -22,8 +23,8 @@
 		<tr>
 			<th scope="row"><s:label value="名"/></th>
 			<td><s:property value="#session.firstName"/></td>
-		</tr>
 
+		</tr>
 		<tr>
 			<th scope="row"><s:label value="ふりがな"/></th>
 			<td><s:property value="#session.familyNameKana"/><span>　</span><s:property value="#session.firstNameKana"/></td>
@@ -38,10 +39,10 @@
 			<th scope="row"><s:label value="メールアドレス"/></th>
 			<td><s:property value="#session.email"/></td>
 		</tr>
-
 	</table>
 	<div class="submit_btn_box">
 	<s:submit value="購入履歴" class="submit_btn"/>
+	</div>
 	</div>
 	</s:form>
 </div>

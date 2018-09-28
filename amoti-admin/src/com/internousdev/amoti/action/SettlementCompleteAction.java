@@ -24,15 +24,16 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 	public String execute() {
 		String result = ERROR;
 
-
 		@SuppressWarnings("unchecked")
 		ArrayList<PurchaseHistoryInfoDTO> purchaseHistoryInfoDtoList = (ArrayList<PurchaseHistoryInfoDTO>)session.get("purchaseHistoryInfoDtoList");
 
 		@SuppressWarnings("unchecked")
 		ArrayList<DestinationInfoDTO> destinationInfoDtoList = (ArrayList<DestinationInfoDTO>)session.get("destinationInfoDtoList");
-		for(int i=0;i<purchaseHistoryInfoDtoList.size();i++) {
-			//TODO
-			purchaseHistoryInfoDtoList.get(i).setDestinationId(destinationInfoDtoList.get(0).getId());
+		if(destinationInfoDtoList != null){
+			for(int i=0;i<purchaseHistoryInfoDtoList.size();i++) {
+				//TODO
+				purchaseHistoryInfoDtoList.get(i).setDestinationId(destinationInfoDtoList.get(0).getId());
+			}
 		}
 
 		PurchaseHistoryInfoDAO purchaseHistoryInfoDAO = new PurchaseHistoryInfoDAO();
@@ -60,7 +61,9 @@ public class SettlementCompleteAction extends ActionSupport implements SessionAw
 
 				int totalPrice = Integer.parseInt(String.valueOf(cartInfoDAO.getTotalPrice(String.valueOf(session.get("loginId")))));
 				session.put("totalPrice", totalPrice);//セッションにtotalPriceを入れる
-				result = SUCCESS;
+				if(session.containsKey("destinationInfoDtoList")){
+					result = SUCCESS;
+				}
 			}
 		}
 		return result;

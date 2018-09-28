@@ -20,16 +20,13 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 	private String imageFilePath;
 	private String imageFileName;
 	private int price;
-
 	private String categoryId;
 	private String keywords;
-
-
 	private Map<String, Object> session;
-	private List<MCategoryDTO> mCategoryDtoList;
-	private List<ProductInfoDTO> getProductInfoDtoList;
 	public String execute() {
 		String result = ERROR;
+		session.put("keywords", keywords);
+		keywords = "";
 
 		List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 		List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
@@ -38,8 +35,8 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 		Pagination pagination = new Pagination();
 		PaginationDTO paginationDTO = pagination.initialize(productInfoDtoList, 9);
 		session.put("totalPageSize", paginationDTO.getTotalPageSize());
-		session.put("currentPageNumber", paginationDTO.getCurrentPageNo());
-		session.put("totalRecordSize", paginationDTO.getTotalPageSize());
+		session.put("currentPageNo", paginationDTO.getCurrentPageNo());
+		session.put("totalRecordSize", paginationDTO.getTotalRecordSize());
 		session.put("startRecordNo", paginationDTO.getStartRecordNo());
 		session.put("endRecordNo", paginationDTO.getEndRecordNo());
 		session.put("pageNumberList", paginationDTO.getPageNumberList());
@@ -54,17 +51,9 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 			mCategoryDtoList = mCategoryDao.getMCategoryList();
 			session.put("mCategoryDtoList", mCategoryDtoList);
 		}
-
+		session.remove("keywords");
 		result = SUCCESS;
 		return result;
-	}
-
-	public List<MCategoryDTO> getmCategoryDtoList() {
-		return mCategoryDtoList;
-	}
-
-	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
-		this.mCategoryDtoList = mCategoryDtoList;
 	}
 
 	public String getProductName() {
@@ -108,12 +97,6 @@ public class ProductListAction extends ActionSupport implements SessionAware{
 	}
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
-	}
-	public List<ProductInfoDTO> getProductInfoDtoList() {
-		return getProductInfoDtoList;
-	}
-	public void setProductInfoDtoList(List<ProductInfoDTO> productInfoDtoList) {
-		this.getProductInfoDtoList = productInfoDtoList;
 	}
 	public Map<String, Object> getSession() {
 		return session;

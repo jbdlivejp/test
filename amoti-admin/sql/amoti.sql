@@ -37,19 +37,7 @@ insert into user_info values
 (9,"guest9","guest9","インターノウス","ゲストユーザー9","いんたーのうす","げすとゆーざー9",0,"guest9@gmail.com",0,0,now(),now()),
 (10,"guest10","guest10","インターノウス","ゲストユーザー10","いんたーのうす","げすとゆーざー10",0,"guest10@gmail.com",0,0,now(),now()),
 (11,"guest11","guest11","インターノウス","ゲストユーザー11","いんたーのうす","げすとゆーざー11",0,"guest11@gmail.com",0,0,now(),now()),
-(12,"guest12","guest12","インターノウス","ゲストユーザー12","いんたーのうす","げすとゆーざー12",0,"guest12@gmail.com",0,0,now(),now()),
-(13,"admin","admin","インターノウス","管理者ユーザー","いんたーのうす","かんりしゃゆーざー",0,"admin@gmail.com",1,0,now(),now()),
-(14,"admin2","admin2","インターノウス","管理者ユーザー2","いんたーのうす","かんりしゃゆーざー2",0,"admin2@gmail.com",1,0,now(),now()),
-(15,"admin3","admin3","インターノウス","管理者ユーザー3","いんたーのうす","かんりしゃゆーざー3",0,"admin3@gmail.com",1,0,now(),now()),
-(16,"admin4","admin4","インターノウス","管理者ユーザー4","いんたーのうす","かんりしゃゆーざー4",0,"admin4@gmail.com",1,0,now(),now()),
-(17,"admin5","admin5","インターノウス","管理者ユーザー5","いんたーのうす","かんりしゃゆーざー5",0,"admin5@gmail.com",1,0,now(),now()),
-(18,"admin6","admin6","インターノウス","管理者ユーザー6","いんたーのうす","かんりしゃゆーざー6",0,"admin6@gmail.com",1,0,now(),now()),
-(19,"admin7","admin7","インターノウス","管理者ユーザー7","いんたーのうす","かんりしゃゆーざー7",0,"admin7@gmail.com",1,0,now(),now()),
-(20,"admin8","admin8","インターノウス","管理者ユーザー8","いんたーのうす","かんりしゃゆーざー8",0,"admin8@gmail.com",1,0,now(),now()),
-(21,"admin9","admin9","インターノウス","管理者ユーザー9","いんたーのうす","かんりしゃゆーざー9",0,"admin9@gmail.com",1,0,now(),now()),
-(22,"admin10","admin10","インターノウス","管理者ユーザー10","いんたーのうす","かんりしゃゆーざー10",0,"admin10@gmail.com",1,0,now(),now()),
-(23,"admin11","admin11","インターノウス","管理者ユーザー11","いんたーのうす","かんりしゃゆーざー11",0,"admin11@gmail.com",1,0,now(),now()),
-(24,"admin12","admin12","インターノウス","管理者ユーザー12","いんたーのうす","かんりしゃゆーざー12",0,"admin12@gmail.com",1,0,now(),now());
+(12,"guest12","guest12","インターノウス","ゲストユーザー12","いんたーのうす","げすとゆーざー12",0,"guest12@gmail.com",0,0,now(),now());
 
 create table product_info(
 id int primary key not null auto_increment comment "ID",
@@ -74,31 +62,26 @@ comment="商品情報テーブル"
 
 set foreign_key_checks=0;
 insert into product_info values
-( 1, 1,"Illustration１","いらすと１","Illustration１の商品詳細",2,100,"./images","sample1.jpg",now(),"発売会社",0,now(),now()),
-( 2, 2,"Illustration２","いらすと２","Illustration２の商品詳細",2,200,"./images","sample1.jpg",now(),"発売会社",0,now(),now()),
-( 3, 3,"Illustration３","いらすと３","Illustration３の商品詳細",2,300,"./images","sample1.jpg",now(),"発売会社",0,now(),now()),
-( 4, 4,"Illustration４","いらすと４","Illustration４の商品詳細",2,100,"./images","sample1.jpg",now(),"発売会社",0,now(),now()),
-( 5, 5,"Illustration５","いらすと５","Illustration５の商品詳細",2,200,"./images","sample1.jpg",now(),"発売会社",0,now(),now()),
-( 6, 6,"Illustration６","いらすと６","Illustration６の商品詳細",2,300,"./images","sample1.jpg",now(),"発売会社",0,now(),now()),
-( 7, 7,"Picture７","ぴくちゃー７","Picture７の商品詳細",3,100,"./images","sample2.jpg",now(),"発売会社",0,now(),now()),
-( 8, 8,"Picture８","ぴくちゃー８","Picture８の商品詳細",3,200,"./images","sample2.jpg",now(),"発売会社",0,now(),now()),
-( 9, 9,"Picture９","ぴくちゃー９","Picture９の商品詳細",3,300,"./images","sample2.jpg",now(),"発売会社",0,now(),now()),
-( 10, 10,"Picture１０","ぴくちゃー１０","Picture１０の商品詳細",3,100,"./images","sample2.jpg",now(),"発売会社",0,now(),now()),
-( 11, 11,"Picture１１","ぴくちゃー１１","Picture１１の商品詳細",3,200,"./images","sample2.jpg",now(),"発売会社",0,now(),now()),
-( 12, 12,"Picture１２","ぴくちゃー１２","Picture１２の商品詳細",3,300,"./images","sample2.jpg",now(),"発売会社",0,now(),now()),
-( 13, 13,"Photography１３","ふぉと１３","Photography１３の商品詳細",4,100,"./images","sample3.jpg",now(),"発売会社",0,now(),now()),
-( 14, 14,"Photography１４","ふぉと１４","Photography１４の商品詳細",4,200,"./images","sample3.jpg",now(),"発売会社",0,now(),now()),
-( 15, 15,"Photography１５","ふぉと１５","Photography１５の商品詳細",4,300,"./images","sample3.jpg",now(),"発売会社",0,now(),now()),
-( 16, 16,"Photography１６","ふぉと１６","Photography１６の商品詳細",4,100,"./images","sample3.jpg",now(),"発売会社",0,now(),now()),
-( 17, 17,"Photography１７","ふぉと１７","Photography１７の商品詳細",4,200,"./images","sample3.jpg",now(),"発売会社",0,now(),now()),
-( 18, 18,"Photography１８","ふぉと１８","Photography１８の商品詳細",4,300,"./images","sample3.jpg",now(),"発売会社",0,now(),now()),
-( 19, 19,"Others１９","そのた１９","Others１９の商品詳細",5,100,"./images","sample4.jpg",now(),"発売会社",0,now(),now()),
-( 20, 20,"Others２０","そのた２０","Others２０の商品詳細",5,200,"./images","sample4.jpg",now(),"発売会社",0,now(),now()),
-( 21, 21,"Others２１","そのた２１","Others２１の商品詳細",5,300,"./images","sample4.jpg",now(),"発売会社",0,now(),now()),
-( 22, 22,"Others２２","そのた２２","Others２２の商品詳細",5,100,"./images","sample4.jpg",now(),"発売会社",0,now(),now()),
-( 23, 23,"Others２３","そのた２３","Others２３の商品詳細",5,200,"./images","sample4.jpg",now(),"発売会社",0,now(),now()),
-( 24, 24,"Others２４","そのた２４","Others２４の商品詳細",5,300,"./images","sample4.jpg",now(),"発売会社",0,now(),now());
-
+( 1, 1,"Illustration1","いらすと１","Illustration１の商品詳細",2,100,"./images","illust1.jpg",now(),"発売会社",0,now(),now()),
+( 2, 2,"Illustration2","いらすと２","Illustration２の商品詳細",2,200,"./images","illust2.jpg",now(),"発売会社",0,now(),now()),
+( 3, 3,"Illustration3","いらすと３","Illustration３の商品詳細",2,300,"./images","illust3.jpg",now(),"発売会社",0,now(),now()),
+( 4, 4,"Illustration4","いらすと４","Illustration４の商品詳細",2,100,"./images","illust4.jpg",now(),"発売会社",0,now(),now()),
+( 5, 5,"Illustration5","いらすと５","Illustration５の商品詳細",2,200,"./images","illust5.jpg",now(),"発売会社",0,now(),now()),
+( 6, 6,"Picture1","ぴくちゃー１","Picture１の商品詳細",3,100,"./images","picture1.jpg",now(),"発売会社",0,now(),now()),
+( 7, 7,"Picture2","ぴくちゃー２","Picture２の商品詳細",3,200,"./images","picture2.jpg",now(),"発売会社",0,now(),now()),
+( 8, 8,"Picture3","ぴくちゃー３","Picture３の商品詳細",3,300,"./images","picture3.jpg",now(),"発売会社",0,now(),now()),
+( 9, 9,"Picture4","ぴくちゃー４","Picture４の商品詳細",3,100,"./images","picture4.jpg",now(),"発売会社",0,now(),now()),
+( 10, 10,"Picture5","ぴくちゃー５","Picture５の商品詳細",3,200,"./images","picture5.jpg",now(),"発売会社",0,now(),now()),
+( 11, 11,"Photography1","ふぉと１","Photography１の商品詳細",4,100,"./images","photo1.jpg",now(),"発売会社",0,now(),now()),
+( 12, 12,"Photography2","ふぉと２","Photography２の商品詳細",4,200,"./images","photo2.jpg",now(),"発売会社",0,now(),now()),
+( 13, 13,"Photography3","ふぉと３","Photography３の商品詳細",4,300,"./images","photo3.jpg",now(),"発売会社",0,now(),now()),
+( 14, 14,"Photography4","ふぉと４","Photography４の商品詳細",4,100,"./images","photo4.jpg",now(),"発売会社",0,now(),now()),
+( 15, 15,"Photography5","ふぉと５","Photography５の商品詳細",4,200,"./images","photo5.jpg",now(),"発売会社",0,now(),now()),
+( 16, 16,"Others1","そのた１","Others１の商品詳細",5,100,"./images","others1.jpg",now(),"発売会社",0,now(),now()),
+( 17, 17,"Others2","そのた２","Others２の商品詳細",5,200,"./images","others2.jpg",now(),"発売会社",0,now(),now()),
+( 18, 18,"Others3","そのた３","Others３の商品詳細",5,300,"./images","others3.jpg",now(),"発売会社",0,now(),now()),
+( 19, 19,"Others4","そのた４","Others４の商品詳細",5,100,"./images","others4.jpg",now(),"発売会社",0,now(),now()),
+( 20, 20,"Others5","そのた５","Others５の商品詳細",5,200,"./images","others5.jpg",now(),"発売会社",0,now(),now());
 
 create table cart_info(
 id int primary key not null auto_increment comment "ID",

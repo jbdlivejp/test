@@ -1,3 +1,4 @@
+
 package com.internousdev.amoti.dto;
 
 import java.util.Date;

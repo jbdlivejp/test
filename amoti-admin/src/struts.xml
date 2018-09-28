@@ -10,9 +10,12 @@
 	<package name="com.internousdev.amoti.action" extends="struts-default">
 
 	<action name="AddCartAction" class="com.internousdev.amoti.action.AddCartAction" method="execute">
+		<interceptor-ref name="token"/>
+        <interceptor-ref name="basicStack"/>
 		<result name="success">cart.jsp</result>
 		<result name="error">home.jsp</result>
 		<result name="input">cart.jsp</result>
+		<result name="invalid.token">cart.jsp</result>
 	</action>
 
 	<action name="CartAction" class="com.internousdev.amoti.action.CartAction" method="execute">
@@ -26,8 +29,11 @@
 	</action>
 
 	<action name="CreateDestinationCompleteAction" class="com.internousdev.amoti.action.CreateDestinationCompleteAction" method="execute">
+		<interceptor-ref name="token"/>
+		<interceptor-ref name="basicStack"/>
 		<result name="success">createDestinationComplete.jsp</result>
 		<result name="error">createDestination.jsp</result>
+		<result name="invalid.token">createDestination.jsp</result>
 	</action>
 
 	<action name="CreateDestinationConfirmAction" class="com.internousdev.amoti.action.CreateDestinationConfirmAction" method="execute">
@@ -67,14 +73,12 @@
 
    <action name="HomeAction" class="com.internousdev.amoti.action.HomeAction" method="execute">
 		<result name="success">home.jsp</result>
-		<result name="admin">admin.jsp</result>
 	</action>
 
     <action name="LoginAction" class="com.internousdev.amoti.action.LoginAction" method="execute">
 		<result name="success">home.jsp</result>
 		<result name="settlement">settlementConfirm.jsp</result>
 		<result name="error">login.jsp</result>
-		<result name="admin">admin.jsp</result>
 	</action>
 
 	<action name="LogoutAction" class="com.internousdev.amoti.action.LogoutAction" method="execute">
@@ -116,97 +120,22 @@
 		<result name="error">resetPassword.jsp</result>
 	</action>
 
-   <action name="SearchItemAction" class="com.internousdev.amoti.action.SearchItemAction" method="execute">
+	<action name="SearchItemAction" class="com.internousdev.amoti.action.SearchItemAction" method="execute">
 		<result name="success">productList.jsp</result>
 		<result name="error">productList.jsp</result>
 	</action>
 
-   <action name="SettlementCompleteAction" class="com.internousdev.amoti.action.SettlementCompleteAction" method="execute">
+	<action name="SettlementCompleteAction" class="com.internousdev.amoti.action.SettlementCompleteAction" method="execute">
+		<interceptor-ref name="token"/>
+		<interceptor-ref name="basicStack"/>
 		<result name="success">settlementComplete.jsp</result>
 		<result name="error">settlementConfirm.jsp</result>
+		<result name="invalid.token">settlementError.jsp</result>
 	</action>
 
-   <action name="SettlementConfirmAction" class="com.internousdev.amoti.action.SettlementConfirmAction" method="execute">
+	<action name="SettlementConfirmAction" class="com.internousdev.amoti.action.SettlementConfirmAction" method="execute">
 		<result name="success">settlementConfirm.jsp</result>
 		<result name="error">login.jsp</result>
-	</action>
-
-	<action name="AdminAllSelectAction" class="com.internousdev.amoti.action.AdminAllSelectAction" method="execute">
-		<result name="success">admin.jsp</result>
-	</action>
-
-	<action name="AdminProductDeleteAction" class="com.internousdev.amoti.action.AdminProductDeleteAction" method="execute">
-		<result name="success">adminDelete.jsp</result>
-	</action>
-
-	<action name="AdminProductDeleteCompleteAction" class="com.internousdev.amoti.action.AdminProductDeleteCompleteAction" method="execute">
-		<result name="success">adminDeleteComplete.jsp</result>
-	</action>
-
-	<action name="AdminProductDetailsAction" class="com.internousdev.amoti.action.AdminProductDetailsAction" method="execute">
-		<result name="success">adminProductDetails.jsp</result>
-	</action>
-
-	<action name="AdminProductEditAction" class="com.internousdev.amoti.action.AdminProductEditAction" method="execute">
-		<result name="success">adminProductEdit.jsp</result>
-	</action>
-
-	<action name="AdminProductEditConfirmAction" class="com.internousdev.amoti.action.AdminProductEditConfirmAction" method="execute">
-		<result name="success">adminProductEditConfirm.jsp</result>
-	</action>
-
-	<action name="AdminProductEditCompleteAction" class="com.internousdev.amoti.action.AdminProductEditCompleteAction" method="execute">
-		<result name="success">adminProductEditComplete.jsp</result>
-	</action>
-
-	<action name="AdminProductListAction" class="com.internousdev.amoti.action.AdminProductListAction" method="execute">
-		<result name="success">adminProductList.jsp</result>
-	</action>
-
-	<action name="AdminProductRegistAction" class="com.internousdev.amoti.action.AdminProductRegistAction" method="execute">
-		<result name="success">adminProductRegist.jsp</result>
-	</action>
-
-	<action name="AdminProductRegistCompleteAction" class="com.internousdev.amoti.action.AdminProductRegistCompleteAction" method="execute">
-		<result name="success">adminProductRegistComplete.jsp</result>
-	</action>
-
-	<action name="AdminProductRegistConfirmAction" class="com.internousdev.amoti.action.AdminProductRegistConfirmAction" method="execute">
-		<result name="success">adminProductRegistConfirm.jsp</result>
-		<result name="error">admin.jsp</result>
-		<result name="errorhome">error.html</result>
-	</action>
-
-	<action name="AdminUserDetailsAction" class="com.internousdev.amoti.action.AdminUserDetailsAction" method="execute">
-		<result name="success">adminUserDetails.jsp</result>
-	</action>
-
-	<action name="AdminUserEditAction" class="com.internousdev.amoti.action.AdminUserEditAction" method="execute">
-		<result name="success">adminUserEdit.jsp</result>
-	</action>
-
-	<action name="AdminUserEditConfirmAction" class="com.internousdev.amoti.action.AdminUserEditConfirmAction" method="execute">
-		<result name="success">adminUserEditConfirm.jsp</result>
-	</action>
-
-	<action name="AdminUserEditCompleteAction" class="com.internousdev.amoti.action.AdminUserEditCompleteAction" method="execute">
-		<result name="success">adminUserEditComplete.jsp</result>
-	</action>
-
-	<action name="AdminUserListAction" class="com.internousdev.amoti.action.AdminUserListAction" method="execute">
-		<result name="success">adminUserList.jsp</result>
-	</action>
-
-	<action name="AdminUserRegistAction" class="com.internousdev.amoti.action.AdminUserRegistAction" method="execute">
-		<result name="success">adminUserRegist.jsp</result>
-	</action>
-
-	<action name="AdminUserRegistCompleteAction" class="com.internousdev.amoti.action.AdminUserRegistCompleteAction" method="execute">
-		<result name="success">adminUserRegistComplete.jsp</result>
-	</action>
-
-	<action name="AdminUserRegistConfirmAction" class="com.internousdev.amoti.action.AdminUserRegistConfirmAction" method="execute">
-		<result name="success">adminUserRegistConfirm.jsp</result>
 	</action>
 
 </package>

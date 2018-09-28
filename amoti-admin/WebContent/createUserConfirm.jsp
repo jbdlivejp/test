@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/createUser.css">
 <title>登録内容確認</title>
 </head>
 <body>
@@ -50,6 +50,7 @@
 <div class="submit_btn_box">
 <div id=".contents-btn-set">
 <s:submit value="登録" class="submit_btn" />
+
 </div>
 </div>
 <s:hidden name="loginId" value="%{loginId}"/>

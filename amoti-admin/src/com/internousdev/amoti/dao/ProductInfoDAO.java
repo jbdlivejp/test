@@ -36,7 +36,7 @@ public class ProductInfoDAO {
 				productInfoDto.setReleaseDate(resultSet.getDate("release_date"));
 				productInfoDto.setReleaseCompany(resultSet.getString("release_company"));
 				productInfoDto.setStatus(resultSet.getInt("status"));
-				productInfoDto.setUpdateDate(resultSet.getDate("regist_date"));
+				productInfoDto.setRegistDate(resultSet.getDate("regist_date"));
 				productInfoDto.setUpdateDate(resultSet.getDate("update_date"));
 				productInfoDtoList.add(productInfoDto);
 			}
@@ -175,7 +175,7 @@ public class ProductInfoDAO {
 			return productInfoDtoList;
 		}
 
-		public List<ProductInfoDTO> getProductInfoListByKeywords(String[] keywordsList, String categoryId) {
+		public List<ProductInfoDTO> getProductInfoListByKeywords(String[] keywordsList, int categoryId) {
 			DBConnector dbConnector = new DBConnector();
 			Connection connection = dbConnector.getConnection();
 			List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
@@ -186,7 +186,7 @@ public class ProductInfoDAO {
 					sql += " category_id=" + categoryId + " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
 					initializeFlag = false;
 				} else {
-					sql += " or (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
+					sql += " or category_id=" + categoryId + " and (product_name like '%" + keyword + "%' or product_name_kana like '%" + keyword + "%')";
 				}
 			}
 			try {

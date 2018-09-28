@@ -23,6 +23,7 @@ public class CartAction extends ActionSupport implements SessionAware{
 		String userId = null;
 		CartInfoDAO dao = new CartInfoDAO();
 		List<CartInfoDTO> dtoList = new ArrayList<CartInfoDTO>();
+		session.remove("checkListErrorMessageList");
 //ログインしてるか一時ログインか見分けます//
 		if(session.containsKey("loginId")){
 			userId = String.valueOf(session.get("loginId"));

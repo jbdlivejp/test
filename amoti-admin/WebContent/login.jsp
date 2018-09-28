@@ -4,8 +4,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<meta charset="utf-8">
+<link rel="stylesheet" href="./css/amoti.css">
 <title>ログイン</title>
 
 <script>
@@ -26,34 +26,37 @@ function goResetPasswordAction(){
 <div id="contents">
 <h1>ログイン画面</h1>
 <s:form id="form" action="LoginAction">
-	<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
-		<div class="error">
-			<div class="error-message">
-				<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br></s:iterator>
-			</div>
-		</div>
-	</s:if>
-	<s:if test="!#session.passwordErrorMessageList.isEmpty()">
-		<div class="error">
-			<div class="error-message">
-				<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
-			</div>
-		</div>
-	</s:if>
-
 	<table class="vertical-list-table">
 		<tr>
-			<th scope="row"><s:label value="ログインID:"/></th>
+			<th class="value" scope="row"><s:label value="ログインID"/></th>
+			<s:if test="!#session.loginIdErrorMessageList.isEmpty()">
+			<th>
+				<div class="error">
+				<div class="error-message">
+					<s:iterator value="#session.loginIdErrorMessageList"><s:property /><br></s:iterator>
+				</div>
+				</div>
+			</th>
+			</s:if>
 			<s:if test="#session.savedLoginIdFlg==true">
-			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.savedLoginId}' autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" value='%{#session.savedLoginId}' autocomplete="new-password"/></td>
 			</s:if>
 			<s:else>
-			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="off"/></td>
+			<td><s:textfield name="loginId" class="txt" placeholder="ログインID" autocomplete="new-password"/></td>
 			</s:else>
 		</tr>
 		<tr>
-			<th scope="row"><s:label value="パスワード:"/></th>
-			<td><s:password name="password" class="txt" placeholder="パスワード" autocomplete="off"/></td>
+			<th class="value" scope="row"><s:label value="パスワード"/></th>
+			<s:if test="!#session.passwordErrorMessageList.isEmpty()">
+			<th>
+				<div class="error">
+				<div class="error-message">
+					<s:iterator value="#session.passwordErrorMessageList"><s:property /><br></s:iterator>
+				</div>
+				</div>
+			</th>
+			</s:if>
+			<td><s:password name="password" class="txt" placeholder="パスワード" autocomplete="new-password"/></td>
 		</tr>
 	</table>
 	<div class="box">

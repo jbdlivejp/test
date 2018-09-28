@@ -32,6 +32,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		String result = ERROR;
 		String userId = null;
 		String tempUserId = null;
+		session.remove("checkListErrorMessageList");
 //ログインしてなくて一時ログインもしてないときはランダムでid設定して一時ログインします//
 		if(!(session.containsKey("loginId")) && !(session.containsKey("tempUserId"))){
 			CommonUtility cu = new CommonUtility();
@@ -59,6 +60,7 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 		if(!(iterator.hasNext())){
 			dtoList = null;
 		}
+
 		session.put("cartInfoDtoList", dtoList);
 		int totalPrice = Integer.parseInt(String.valueOf(dao.getTotalPrice(userId)));
 		session.put("totalPrice", totalPrice);
@@ -160,4 +162,5 @@ public class AddCartAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 }

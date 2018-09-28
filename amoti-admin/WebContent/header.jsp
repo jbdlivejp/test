@@ -5,7 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<!-- <link rel="stylesheet" href="./css/style.css">  -->
+<link rel="stylesheet" href="./css/header.css">
+<link href="https://fonts.googleapis.com/css?family=Vollkorn" rel="stylesheet">
+<link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+
 <title>ヘッダー</title>
 <script>
 function goLoginAction(){
@@ -27,13 +30,14 @@ function goLogoutAction(){
 function goSearchItemAction(){
 	document.getElementById("form").action="SearchItemAction";
 }
+
 </script>
 </head>
 <body>
 <header>
 <div id="header">
 <div id="header-title">
-amoti
+<a href="HomeAction" style="color:#fff;text-decoration:none"> amoti</a>
 </div>
 <div id="header-menu">
 <ul>
@@ -41,18 +45,22 @@ amoti
 	<s:if test='#session.containsKey("mCategoryDtoList")'>
 	<li><s:select name="categoryId" list="#session.mCategoryDtoList" listValue="categoryName" listKey="categoryId" class="cs-div" id="categoryId"/></li>
 	</s:if>
-	<li><s:textfield name="keywords" class="txt-keywords" placeholder="検索ワード" /></li>
-	<li><s:submit value="商品検索" class="submit_btn" onclick="goSearchItemAction();"/><li>
-	<s:if test="#session.logined==1">
-	<li><s:submit value="ログアウト" class="submit_btn" onclick="goLogoutAction();"/></li>
+	<li><s:if test='#session.containsKey("keywords")'>
+	<s:textfield name="keywords" class="txt-keywords" placeholder="検索ワード" value="%{#session.keywords}"/>
 	</s:if>
 	<s:else>
-		<li><s:submit value="ログイン" class="submit_btn" onclick="goLoginAction();"/></li>
-	</s:else>
-	<li><s:submit value="カート" class="submit_btn" onclick="goCartAction();"/><li>
-	<li><s:submit value="商品一覧" class="submit_btn" onclick="goProductListAction();"/></li>
+	<s:textfield name="keywords" class="txt-keywords" placeholder="検索ワード" /></s:else></li>
+	<li><s:submit value="商品検索" class="submit_btn1" onclick="goSearchItemAction();"/><li>
 	<s:if test="#session.logined==1">
-		<li><s:submit value="マイページ" class="submit_btn" onclick="goMyPageAction();"/></li>
+	<li><s:submit value="ログアウト" class="submit_btn1" onclick="goLogoutAction();"/></li>
+	</s:if>
+	<s:else>
+		<li><s:submit value="ログイン" class="submit_btn1" onclick="goLoginAction();"/></li>
+	</s:else>
+	<li><s:submit value="カート" class="submit_btn1" onclick="goCartAction();"/><li>
+	<li><s:submit value="商品一覧" class="submit_btn1" onclick="goProductListAction();"/></li>
+	<s:if test="#session.logined==1">
+		<li><s:submit value="マイページ" class="submit_btn1" onclick="goMyPageAction();"/></li>
 	</s:if>
 </s:form>
 </ul>

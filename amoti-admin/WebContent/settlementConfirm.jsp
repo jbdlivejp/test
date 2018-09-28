@@ -6,7 +6,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/settlementConfirm.css">
 <title>決済確認</title>
 
 </head>
@@ -14,12 +14,20 @@
 <jsp:include page="header.jsp" />
 <div id="contents">
 <h1>決済確認画面</h1>
+<s:if test="#session.destinationInfoDtoList != null">
 <div class="info">
-	送り先情報を選択してください
+	送り先情報を選択してください。
 </div>
+</s:if>
+<s:else>
+<div class="info2">
+	宛先情報が登録されていません。
+</div>
+</s:else>
+
 	<s:form id="form" action="SettlementCompleteAction" >
-<!-- <h3>お届け先住所</h3> -->
-	<table class="horizontal-list-table">
+	<s:if test="#session.destinationInfoDtoList != null">
+	<table class="horizontal-list-table" border="1">
 	<thead>
 	<tr>
 	<th><s:label value="#"/></th>
@@ -58,25 +66,19 @@
 	</s:iterator>
 	</tbody>
 	</table>
-
-	<div class="submit_btn_box">
+<s:token/>
+<div class="submit_btn_box">
 <div id=".contents-btn-set">
 	<s:submit value="決済" class="submit_btn"/>
 </div>
 </div>
+</s:if>
 	</s:form>
 
 <div class="submit_btn_box">
 <div id=".contents-btn-set">
 	<s:form action="CreateDestinationAction">
 		<s:submit value="新規登録" class="submit_btn" />
-	</s:form>
-</div>
-</div>
-<div class="submit_btn_box">
-<div id=".contents-btn-set">
-	<s:form action="CartAction">
-		<s:submit value="戻る" class="submit_btn" />
 	</s:form>
 </div>
 </div>

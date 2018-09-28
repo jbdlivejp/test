@@ -5,14 +5,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/amoti.css">
 <title>ホーム</title>
 </head>
 <body>
 <jsp:include page="header.jsp" />
-<div id="contents">
-<h1>ホーム画面</h1>
-</div>
+<img src='images/homeimg.png'/>
+
 <s:include value="footer.jsp"/>
 </body>
 </html>

@@ -8,24 +8,24 @@ import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
 
+import com.internousdev.amoti.dao.MCategoryDAO;
 import com.internousdev.amoti.dao.ProductInfoDAO;
+import com.internousdev.amoti.dto.MCategoryDTO;
 import com.internousdev.amoti.dto.ProductInfoDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-
 public class ProductDetailsAction extends ActionSupport implements SessionAware{
+
 	private int productId;
-
-
 	private String categoryId;
 	private Map<String, Object> session;
-	private List<ProductInfoDTO> productInfoDtoList;
 
 	public String execute(){
 		String result = ERROR;
 		List<ProductInfoDTO> productInfoDtoList = new ArrayList<ProductInfoDTO>();
 		ProductInfoDAO productInfoDAO = new ProductInfoDAO();
 		ProductInfoDTO productInfoDTO = new ProductInfoDTO();
+		List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
 		productInfoDTO = productInfoDAO.getProductInfo(productId);
 		session.put("id", productInfoDTO.getId());
 		session.put("productId", productInfoDTO.getProductId());
@@ -34,7 +34,6 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 		session.put("imageFilePath", productInfoDTO.getImageFilePath());
 		session.put("imageFileName", productInfoDTO.getImageFileName());
 		session.put("price", productInfoDTO.getPrice());
-
 		session.put("releaseCompany", productInfoDTO.getReleaseCompany());
 		session.put("releaseDate", productInfoDTO.getReleaseDate());
 		session.put("productDescription", productInfoDTO.getProductDescription());
@@ -45,14 +44,17 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 		if(!(iterator.hasNext())) {
 			productCountList = null;
 		}
+		if(!session.containsKey("mCategoryList")) {
+			MCategoryDAO mCategoryDao = new MCategoryDAO();
+			mCategoryDtoList = mCategoryDao.getMCategoryList();
+			session.put("mCategoryDtoList", mCategoryDtoList);
+		}
 		if(!productInfoDtoList.isEmpty() || productCountList==null) {
 			session.put("productInfoDtoList", productInfoDtoList);
 			result = SUCCESS;
 		}
 		return result;
 	}
-
-
 	public String getCategoryId() {
 		return categoryId;
 	}
@@ -65,18 +67,10 @@ public class ProductDetailsAction extends ActionSupport implements SessionAware{
 	public void setProductId(int productId) {
 		this.productId = productId;
 	}
-	public List<ProductInfoDTO> getProductInfoDtoList() {
-		return productInfoDtoList;
-	}
-	public void setProductInfoDtoList(List<ProductInfoDTO> productInfoDtoList) {
-		this.productInfoDtoList = productInfoDtoList;
-	}
 	public Map<String, Object> getSession() {
 		return session;
 	}
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
-
 }

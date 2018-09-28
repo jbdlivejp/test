@@ -7,7 +7,7 @@ import org.apache.commons.lang3.StringUtils;
 
 public class InputChecker {
 
-	public List<String> doCheck(String propertyName,String value,int minLength,int maxLength,boolean availableAlphabeticCharacters,boolean availableKanji,boolean availableHiragana,boolean availableHalfWidthDigit,boolean availableHalfWidthSymbols,boolean availableKatakana,boolean availableFullWidthSymbols){
+	public List<String> doCheck(String propertyName,String value,int minLength,int maxLength,boolean availableAlphabeticCharacters,boolean availableKanji,boolean availableHiragana,boolean availableHalfWidthDigit,boolean availableHalfWidthSymbols,boolean availableKatakana,boolean availableFullWidthSymbols,boolean availableFullWidthDigit,boolean availableFullWidthAlphabet){
 
 		List<String> stringList = new ArrayList<String>();
 		List<String> characterTypeList = new ArrayList<String>();
@@ -23,10 +23,10 @@ public class InputChecker {
 		String regularExpression = "";
 		String errorExpression = "";
 
-		if(availableAlphabeticCharacters || availableKanji || availableHiragana || availableHalfWidthDigit || availableHalfWidthSymbols||availableKatakana||availableFullWidthSymbols){
+		if(availableAlphabeticCharacters || availableKanji || availableHiragana || availableHalfWidthDigit || availableHalfWidthSymbols||availableKatakana||availableFullWidthSymbols||availableFullWidthDigit||availableFullWidthAlphabet){
 			regularExpression = "[^";
 		}
-		if(!(availableAlphabeticCharacters) || !(availableKanji) || !(availableHiragana) || !(availableHalfWidthDigit) || !(availableHalfWidthSymbols)|| !(availableKatakana)|| !(availableFullWidthSymbols)){
+		if(!(availableAlphabeticCharacters) || !(availableKanji) || !(availableHiragana) || !(availableHalfWidthDigit) || !(availableHalfWidthSymbols)|| !(availableKatakana)|| !(availableFullWidthSymbols)|| !(availableFullWidthDigit)|| !(availableFullWidthAlphabet)){
 			errorExpression = "[^";
 		}
 
@@ -59,10 +59,10 @@ public class InputChecker {
 		}
 
 		if(availableHalfWidthSymbols){
-			regularExpression +="@.,;:!#$%&'*+-/=?^_`{|}~ ";
+			regularExpression +="@.,;:!#$%&'*+-/=?^_`{|}~()<>\\ ";
 			characterTypeList.add("半角記号");
 		}else{
-			errorExpression +="@.,;:!#$%&'*+-/=?^_`{|}~ ";
+			errorExpression +="@.,;:!#$%&'*+-/=?^_`{|}~()<>\\ ";
 		}
 
 		if(availableKatakana){
@@ -73,10 +73,24 @@ public class InputChecker {
 		}
 
 		if(availableFullWidthSymbols){
-			regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ ";
+			regularExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～（）「」”￥　";
 			characterTypeList.add("全角記号");
 		}else{
-			errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～ ";
+			errorExpression +="＠．，；：！＃＄％＆’＊＋―／＝？＾＿｀｛｜｝～（）「」”￥　";
+		}
+
+		if(availableFullWidthDigit){
+			regularExpression +="０-９";
+			characterTypeList.add("全角数字");
+		}else{
+			errorExpression+="０-９";
+		}
+
+		if(availableFullWidthAlphabet){
+			regularExpression +="ａ-ｚＡ-Ｚ";
+			characterTypeList.add("全角英字");
+		}else{
+			errorExpression+="ａ-ｚＡ-Ｚ";
 		}
 
 		if(!StringUtils.isEmpty(regularExpression)){

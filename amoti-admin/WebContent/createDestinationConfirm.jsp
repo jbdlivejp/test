@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="./css/style.css">
+<link rel="stylesheet" href="./css/createDestination.css">
 <title>宛先情報確認</title>
 </head>
 <body>
@@ -37,7 +37,7 @@
 
 <tr>
 	<th scope="row"><s:label value="性別"/></th>
-	<td><s:property value="sex"/><s:hidden name="sex" value="%{#session.sex}"/></td>
+	<td class=sex><s:property value="sex"/><s:hidden name="sex" value="%{#session.sex}"/></td>
 </tr>
 
 <tr>
@@ -55,19 +55,14 @@
 	<td><s:property value="email"/><s:hidden name="email" value="%{#session.email}"/></td>
 </tr>
 </table>
+<s:token/>
 <div class="submit_btn_box">
 <div id=".contents-btn-set">
 <s:submit value="宛先情報登録" class="submit_btn" />
 </div>
 </div>
 </s:form>
-<div class="submit_btn_box">
-<div id=".contents-btn-set">
-<s:form action="CreateDestinationAction">
-	<s:submit value="戻る" class="submit_btn"/>
-</s:form>
-</div>
-</div>
+
 </div>
 <s:include value="footer.jsp"/>
 </body>

@@ -57,9 +57,7 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 		}
 
 		for(String productId:checkList){
-			System.out.println("削除する商品ID:"+productId);
 			count += dao.delete(userId, productId);
-			System.out.println("削除された件数:"+count);
 		}
 		if(count <= 0){
 			checkListErrorMessageList.add("チェックされていません。");
@@ -69,7 +67,6 @@ public class DeleteCartAction extends ActionSupport implements SessionAware{
 
 			List<CartInfoDTO> dtoList = new ArrayList<CartInfoDTO>();
 			dtoList = dao.getCartInfoDtoList(userId);
-			System.out.println("削除後のDTOリスト:"+dtoList);
 			Iterator<CartInfoDTO> iterator = dtoList.iterator();
 			if(!(iterator.hasNext())){
 				dtoList = null;

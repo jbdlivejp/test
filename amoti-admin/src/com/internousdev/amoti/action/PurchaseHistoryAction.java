@@ -15,9 +15,7 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class PurchaseHistoryAction extends ActionSupport implements SessionAware{
 	private String categoryId;
-
 	private List<MCategoryDTO> mCategoryDtoList = new ArrayList<MCategoryDTO>();
-
 	private Map<String,Object> session;
 
 	public String execute(){
@@ -43,25 +41,19 @@ public class PurchaseHistoryAction extends ActionSupport implements SessionAware
 	public String getCategoryId() {
 		return categoryId;
 	}
-
 	public void setCategoryId(String categoryId) {
 		this.categoryId = categoryId;
 	}
-
 	public List<MCategoryDTO> getmCategoryDtoList() {
 		return mCategoryDtoList;
 	}
-
 	public void setmCategoryDtoList(List<MCategoryDTO> mCategoryDtoList) {
 		this.mCategoryDtoList = mCategoryDtoList;
 	}
-
 	public Map<String, Object> getSession() {
 		return session;
 	}
-
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }
