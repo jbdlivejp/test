@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="リソース &apos;Amoti-sample&apos; を削除" deleteContents="false" description="リソース &apos;Amoti-sample&apos; を削除" element1="/Amoti-sample" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1538099680901"/>&#x0A;<refactoring comment="リソース名 &apos;amoti&apos; を &apos;amoti(admin)&apos; に変更します" description="リソース &apos;amoti&apos; の名前変更" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/amoti" name="amoti(admin)" stamp="1538108837465" updateReferences="true"/>
+</session>
